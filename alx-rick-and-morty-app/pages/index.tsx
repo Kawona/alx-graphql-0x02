@@ -1,3 +1,4 @@
+// pages/index.tsx
 import { useQuery } from "@apollo/client";
 import { GET_EPISODES } from "@/graphql/queries";
 import { EpisodeProps } from "@/interfaces";
@@ -11,7 +12,7 @@ const Home: React.FC = () => {
   });
 
   useEffect(() => {
-    refetch();
+    refetch({ page });
   }, [page, refetch]);
 
   if (loading) return <h1>Loading...</h1>;
